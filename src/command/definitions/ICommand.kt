@@ -1,5 +1,6 @@
 package command.definitions
 
 interface ICommand {
-    fun execute(args: Array<String>?)
+    val commandName: String
+    fun execute(args: ArrayList<String>?)
 }

@@ -4,8 +4,8 @@ import java.nio.file.Paths
 
 import command.definitions.ICommand
 
-class FileCommand: ICommand {
-    override fun execute(args: Array<String>?) {
+class FileCommand(override val commandName: String) : ICommand {
+    override fun execute(args: ArrayList<String>?) {
         if(args!!.isEmpty()) {
             throw Exception("Invalid parameters")
         }
@@ -13,6 +13,7 @@ class FileCommand: ICommand {
         if(args[1].lowercase() == "-n") {
             val file = File(args[2])
             file.createNewFile()
+            print("file with name: ${args[2]} was created")
         } else if (args[1].lowercase() == "-d") {
             val filePath = Paths.get(args[2])
 
