@@ -1,4 +1,4 @@
-# CommandsPattern
+# Commands Pattern
 
 ## Brief
 This repository contains an implementation of a console GUI in which user can enter commands and they will be executed
