@@ -10,9 +10,12 @@ fun main() {
     CommandManager.registerCommands("DirCommand", DirCommand("DirCommand"))
     CommandManager.registerCommands("FileCommand", FileCommand("FileCommand"))
 
-    while (line != "exit") {
+    while (true) {
         println("Enter your command name")
         line = readln()
+        if (line == "exit") {
+            break
+        }
         lineParts = line.split(" ") as ArrayList<String>
         command = CommandManager.getCommand(lineParts[0])
             ?: throw Exception("Command not found")
